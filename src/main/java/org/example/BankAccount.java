@@ -33,7 +33,7 @@ public class BankAccount {
             this.balance -= withdrawalAmount;
         }
     }
-
+    
     public void interest( double interestRateInPercentage){
         if (this.accountType.equals("Savings")){
             this.balance *= (1 + (interestRateInPercentage / 100));

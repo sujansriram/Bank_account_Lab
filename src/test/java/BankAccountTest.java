@@ -17,40 +17,33 @@ public class BankAccountTest {
 
     @Test
     public void canGetFirstName(){
-        String actual = bankAccount.getFirstName();
-        String expected = "Sujan";
-        assertThat(actual).isEqualTo(expected);
+        assertThat(bankAccount.getFirstName()).isEqualTo("Sujan");
     }
+
     @Test
     public void canGetLastName(){
-        String actual = bankAccount.getLastName();
-        String expected = "Sriram";
-        assertThat(actual).isEqualTo(expected);
+        assertThat(bankAccount.getLastName()).isEqualTo("Sriram");
     }
+
     @Test
     public void canGetDOB(){
-        LocalDate actual = bankAccount.getDateOfBirth();
-        String expected = "1998-09-09";
-        assertThat(actual).isEqualTo(expected);
+        assertThat(bankAccount.getDateOfBirth()).isEqualTo("1998-09-09");
     }
+
     @Test
     public void canGetAccountNumber(){
-        int actual = bankAccount.getAccountNumber();
-        int expected = 9091998;
-        assertThat(actual).isEqualTo(expected);
+        assertThat(bankAccount.getAccountNumber()).isEqualTo(9091998);
     }
+
     @Test
     public void canGetAccountType(){
-        String actual = bankAccount.getAccountType();
-        String expected = "Savings";
-        assertThat(actual).isEqualTo(expected);
+        assertThat(bankAccount.getAccountType()).isEqualTo("Savings");
     }
+
     @Test
     public void canSetBalance(){
         bankAccount.setBalance(1000000);
-        double actual = bankAccount.getBalance();
-        double expected = 1000000;
-        assertThat(actual).isEqualTo(expected);
+        assertThat(bankAccount.getBalance()).isEqualTo(1000000);
     }
 
 
@@ -58,33 +51,25 @@ public class BankAccountTest {
     @Test
     public void canDeposit(){
         bankAccount.deposit(50000);
-        double actual = bankAccount.getBalance();
-        double expected = 50000;
-        assertThat(actual).isEqualTo(expected);
+        assertThat(bankAccount.getBalance()).isEqualTo(50000);
     }
     @Test
     public void canWithdraw(){
         bankAccount.withdrawal(1000);
-        double actual = bankAccount.getBalance();
-        double expected = -1000;
-        assertThat(actual).isEqualTo(expected);
+        assertThat(bankAccount.getBalance()).isEqualTo(-1000);
     }
     @Test
     public void canPayInterest(){
         bankAccount.setBalance(10000);
         bankAccount.setAccountType("Savings");
         bankAccount.interest(3);
-        double actual = bankAccount.getBalance();
-        double expected = 10300;
-        assertThat(actual).isEqualTo(expected);
+        assertThat(bankAccount.getBalance()).isEqualTo(10300);
     }
     @Test
     public void doesNotPayInterest(){
         bankAccount.setBalance(10000);
         bankAccount.setAccountType("Current");
         bankAccount.interest(3);
-        double actual = bankAccount.getBalance();
-        double expected = 10000;
-        assertThat(actual).isEqualTo(expected);
+        assertThat(bankAccount.getBalance()).isEqualTo(10000);
     }
 }
